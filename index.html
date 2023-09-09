@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>long</title>
+</head>
+<body>
+    <style>
+        *,*::after,*::before{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .body{
+            width: 100%;
+        }
+        .text{
+            font-size: 20px;
+            text-transform: capitalize;
+            font-weight: 500;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+    </style>
+    <div class="text"></div>
+
+    <script>
+        const divElement = document.querySelector('.text');
+        let i = 1;
+        const intervalId = setInterval(function() {
+        const paragraph = document.createElement('p');
+        paragraph.textContent = `ok ${i}`;
+        divElement.appendChild(paragraph);
+        
+        i++;
+        if (i > 1000) {
+            clearInterval(intervalId);
+        }
+        }, 100);
+
+    </script>
+</body>
+</html>
